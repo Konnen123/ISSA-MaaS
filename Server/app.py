@@ -4,9 +4,11 @@ from flask import Flask
 from flask_apispec import FlaskApiSpec
 
 from Controllers.authentication_controller import login_user, auth_bp, register_user
+from Controllers.car_controller import get_cars_available, car_bp, add_car, select_car, start_rent_car, finish_rent_car
 from Utils.database_init import init_db
 
 app = Flask(__name__)
+
 app.config.update({
     'APISPEC_SPEC': APISpec(
         title='Backend APIs',
@@ -21,9 +23,15 @@ app.config.update({
 docs = FlaskApiSpec(app)
 
 app.register_blueprint(auth_bp)
+app.register_blueprint(car_bp)
 
 docs.register(login_user, blueprint='auth')
 docs.register(register_user, blueprint='auth')
+docs.register(get_cars_available, blueprint='car')
+docs.register(add_car, blueprint='car')
+docs.register(select_car, blueprint='car')
+docs.register(start_rent_car, blueprint='car')
+docs.register(finish_rent_car, blueprint='car')
 
 init_db()
 

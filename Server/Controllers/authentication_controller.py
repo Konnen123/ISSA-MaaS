@@ -1,12 +1,10 @@
-import random
-
-from flask import Blueprint
+from flask import Blueprint, make_response
 from flask_apispec import use_kwargs
 from werkzeug.security import generate_password_hash, check_password_hash
 
 from Schemas.login_schema import LoginSchema
 from Schemas.register_schema import RegisterSchema
-from Schemas.user_schemas import UserSchema
+from Schemas.user_schema import UserSchema
 from Services.session_service import SessionService
 from Utils import database_connection
 
@@ -26,13 +24,16 @@ def login_user(**kwargs):
 
     if user is not None and email == user[1] and check_password_hash(user[2], password):
         session_token = SessionService().create_session(user)
-        return {'session_token': f'{session_token}'}, 200
+        response = make_response({'session_token': f'{session_token}'}, 200)
+        response.set_cookie('session_token', session_token)
+        return response
 
     return {'message': 'Invalid credentials'}, 401
 
 @auth_bp.route('/register', methods=['POST'])
 @use_kwargs(RegisterSchema, location='json')
 def register_user(**kwargs):
+
     user = UserSchema().load(kwargs)
 
     cursor.execute('''

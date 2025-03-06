@@ -17,5 +17,19 @@ def init_db():
         card_number TEXT NOT NULL
     )
     ''')
+
+    cursor.execute(''' 
+    CREATE TABLE IF NOT EXISTS cars (
+        id INTEGER PRIMARY KEY,
+        car_plate TEXT NOT NULL UNIQUE,
+        doors INTEGER NOT NULL,
+        fuel INTEGER NOT NULL CHECK(fuel >= 0 AND fuel <= 100),
+        registration_number TEXT NOT NULL,
+        available BOOLEAN NOT NULL,
+        lights BOOLEAN NOT NULL,
+        locked BOOLEAN NOT NULL,
+        car_port INTEGER NOT NULL UNIQUE
+    )''')
+
     conn.commit()
 

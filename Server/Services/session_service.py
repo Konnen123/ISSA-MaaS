@@ -1,3 +1,6 @@
+from flask import request
+
+
 def _generate_token():
     import uuid
     return str(uuid.uuid4())
@@ -26,6 +29,9 @@ class SessionService:
     def delete_session(self, token):
         if token in self.sessions:
             del self.sessions[token]
+
+    def is_session_active(self, session_token):
+        return session_token in self.sessions
 
     @property
     def instance(self):
