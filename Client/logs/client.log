@@ -1123,3 +1123,58 @@ ConnectionRefusedError: [WinError 10061] No connection could be made because the
 2025-03-10 16:20:54,729 - maas_client - INFO - Received notification: Car 1 is finished renting
 2025-03-10 16:20:56,768 - maas_client - INFO - Received notification: 
 2025-03-10 16:20:56,768 - maas_client - INFO - Socket server shutdown
+2025-03-10 16:21:34,250 - maas_client - INFO - Session cleared
+2025-03-10 16:21:34,250 - maas_client - INFO - User logged out successfully
+2025-03-10 16:24:03,287 - maas_client - INFO - New session created
+2025-03-10 16:24:03,287 - maas_client - INFO - User ceva@gmail.com logged in successfully
+2025-03-10 16:24:20,465 - maas_client - INFO - Socket server started on port 22980
+2025-03-10 16:24:20,466 - maas_client - INFO - Socket server started on port 22980
+2025-03-10 16:24:41,423 - maas_client - INFO - Released previously selected car 1
+2025-03-10 16:24:43,468 - maas_client - INFO - Received notification: 
+2025-03-10 16:24:43,468 - maas_client - INFO - Socket server shutdown
+2025-03-10 16:24:45,496 - maas_client - INFO - Socket server started on port 36163
+2025-03-10 16:24:45,497 - maas_client - INFO - Socket server started on port 36163
+2025-03-10 16:24:55,015 - maas_client - ERROR - API error: Cannot start rent: {
+  "message": "Car is already unlocked"
+}
+
+2025-03-10 16:25:22,814 - maas_client - INFO - Received notification: 
+2025-03-10 16:25:22,814 - maas_client - INFO - Socket server shutdown
+2025-03-10 16:25:24,848 - maas_client - INFO - Socket server started on port 36163
+2025-03-10 16:25:24,849 - maas_client - INFO - Socket server started on port 36163
+2025-03-10 16:25:32,947 - maas_client - INFO - Received notification: Car 2 is rented
+2025-03-10 16:25:43,054 - maas_client - INFO - Received notification: Car 2 is finished renting
+2025-03-10 16:25:45,091 - maas_client - INFO - Received notification: 
+2025-03-10 16:25:45,091 - maas_client - INFO - Socket server shutdown
+2025-03-10 16:26:03,343 - maas_client - INFO - Socket server started on port 36163
+2025-03-10 16:26:03,344 - maas_client - INFO - Socket server started on port 36163
+2025-03-10 16:26:07,264 - maas_client - ERROR - API error: Cannot start rent: {
+  "message": "Car is already unlocked"
+}
+
+2025-03-10 16:28:41,359 - maas_client - INFO - Received notification: 
+2025-03-10 16:28:41,360 - maas_client - INFO - Socket server shutdown
+2025-03-10 16:28:41,360 - maas_client - INFO - Socket server stopped
+2025-03-10 16:28:58,208 - maas_client - INFO - Session cleared
+2025-03-10 16:28:58,209 - maas_client - INFO - User logged out successfully
+2025-03-10 16:29:05,463 - maas_client - INFO - New session created
+2025-03-10 16:29:05,464 - maas_client - INFO - User ceva@gmail.com logged in successfully
+2025-03-10 16:29:37,640 - maas_client - INFO - Socket server started on port 36163
+2025-03-10 16:29:37,641 - maas_client - INFO - Socket server started on port 36163
+2025-03-10 16:29:41,825 - maas_client - INFO - Received notification: Car 2 is rented
+2025-03-10 16:29:46,906 - maas_client - INFO - Received notification: Car 2 is finished renting
+2025-03-10 16:29:48,935 - maas_client - INFO - Received notification: 
+2025-03-10 16:29:48,935 - maas_client - INFO - Socket server shutdown
+2025-03-10 16:30:02,903 - maas_client - INFO - Socket server started on port 36163
+2025-03-10 16:30:02,904 - maas_client - INFO - Socket server started on port 36163
+2025-03-10 16:30:09,027 - maas_client - INFO - Received notification: Car 2 is rented
+2025-03-10 16:30:19,921 - maas_client - INFO - Received notification: Car 2 is finished renting
+2025-03-10 16:30:21,948 - maas_client - INFO - Received notification: 
+2025-03-10 16:30:21,949 - maas_client - INFO - Socket server shutdown
+2025-03-10 16:31:49,779 - maas_client - INFO - Session cleared
+2025-03-10 16:31:49,779 - maas_client - INFO - User logged out successfully
+2025-03-10 16:45:23,071 - maas_client - WARNING - No user is logged in
+2025-03-10 16:45:31,336 - maas_client - INFO - New session created
+2025-03-10 16:45:31,336 - maas_client - INFO - User ceva@gmail.com logged in successfully
+2025-03-10 16:45:32,589 - maas_client - INFO - Session cleared
+2025-03-10 16:45:32,589 - maas_client - INFO - User logged out successfully

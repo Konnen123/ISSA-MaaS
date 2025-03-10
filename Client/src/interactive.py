@@ -29,14 +29,23 @@ import src.core.cli_manager as cli_manager_module
 logger = get_logger()
 console = Console()
 
-# Available commands
-COMMANDS = [
+# Add at the top with other global variables
+is_renting = False
+
+# Update the COMMANDS list to separate available commands during rental
+NORMAL_COMMANDS = [
     "register",
     "login",
     "logout",
     "cars",
     "select-car",
     "start-rent",
+    "finish-rent",
+    "help",
+    "exit"
+]
+
+RENTAL_COMMANDS = [
     "finish-rent",
     "help",
     "exit"
@@ -53,18 +62,28 @@ def print_welcome():
 
 def print_help():
     """Print help message with available commands."""
-    help_text = "\n".join([
-        "[bold]Available commands:[/bold]",
-        "  [green]register[/green] - Register a new user",
-        "  [green]login[/green] - Login with existing credentials",
-        "  [green]logout[/green] - Logout current user",
-        "  [green]cars[/green] - View available cars",
-        "  [green]select-car[/green] - Select a car by ID",
-        "  [green]start-rent[/green] - Start renting the selected car",
-        "  [green]finish-rent[/green] - Finish renting the car",
-        "  [green]help[/green] - Show this help message",
-        "  [green]exit[/green] - Exit the application"
-    ])
+    global is_renting
+    
+    if is_renting:
+        help_text = "\n".join([
+            "[bold red]Currently renting a car. Only the following commands are available:[/bold red]",
+            "  [green]finish-rent[/green] - Finish renting the current car",
+            "  [green]help[/green] - Show this help message",
+            "  [green]exit[/green] - Exit the application"
+        ])
+    else:
+        help_text = "\n".join([
+            "[bold]Available commands:[/bold]",
+            "  [green]register[/green] - Register a new user",
+            "  [green]login[/green] - Login with existing credentials",
+            "  [green]logout[/green] - Logout current user",
+            "  [green]cars[/green] - View available cars",
+            "  [green]select-car[/green] - Select a car by ID",
+            "  [green]start-rent[/green] - Start renting the selected car",
+            "  [green]finish-rent[/green] - Finish renting the car",
+            "  [green]help[/green] - Show this help message",
+            "  [green]exit[/green] - Exit the application"
+        ])
     console.print(Panel(help_text, title="Help", border_style="green"))
 
 def parse_command(input_str: str) -> str:
@@ -186,6 +205,8 @@ def handle_select_car():
 
 def handle_start_rent():
     """Handle the start-rent command."""
+    global is_renting
+    
     # Get the selected car ID from the cli_manager module
     car_id = cli_manager_module.selected_car_id
     
@@ -205,10 +226,16 @@ def handle_start_rent():
             console.print("[red]Error:[/red] Could not start socket server. Car notifications will not work.")
             return False
     
-    cli_manager.start_rent(car_id=car_id)
+    if cli_manager.start_rent(car_id=car_id):
+        is_renting = True
+        console.print("[bold green]You are now renting a car. Only finish-rent, help, and exit commands are available.[/bold green]")
+        return True
+    return False
 
 def handle_finish_rent():
     """Handle the finish-rent command."""
+    global is_renting
+    
     # Get the selected car ID from the cli_manager module
     car_id = cli_manager_module.selected_car_id
     
@@ -219,11 +246,15 @@ def handle_finish_rent():
     # Use the CLI manager directly instead of subprocess
     cli_manager = CliManager()
     if cli_manager.finish_rent(car_id=car_id):
+        is_renting = False
         cli_manager_module.selected_car_id = None
         stop_socket_server()
+        console.print("[bold green]Rental finished. All commands are now available.[/bold green]")
 
 def run_command(command: str) -> None:
     """Run the specified command with interactive prompts for arguments."""
+    global is_renting
+    
     if command == "help":
         print_help()
         return
@@ -233,7 +264,12 @@ def run_command(command: str) -> None:
         stop_socket_server()
         sys.exit(0)
     
-    if command not in COMMANDS:
+    # Check if command is allowed during rental
+    if is_renting and command not in RENTAL_COMMANDS:
+        console.print("[red]Error:[/red] This command is not available while renting a car. Use 'finish-rent' to end the rental first.")
+        return
+    
+    if command not in NORMAL_COMMANDS:
         console.print(f"[red]Unknown command: {command}[/red]")
         print_help()
         return
@@ -261,7 +297,10 @@ def main():
         
         while True:
             # Get user input
-            user_input = Prompt.ask("\n[bold blue]MaaS>[/bold blue]")
+            if is_renting:
+                user_input = Prompt.ask("\n[bold red]MaaS (Renting)>[/bold red]")
+            else:
+                user_input = Prompt.ask("\n[bold blue]MaaS>[/bold blue]")
             
             # Parse and run the command
             command = parse_command(user_input)

@@ -111,7 +111,7 @@ def finish_rent_car(id):
     if car[6] == 0:
         return {'message': 'Turn off the lights first!'}, 400
 
-    cursor.execute('UPDATE cars SET locked = 1 AND available = 1 WHERE id = ?', (id,))
+    cursor.execute('UPDATE cars SET available = 1, locked = 1, lights = 1 WHERE id = ?', (id,))
     connection.commit()
 
     notify_car(id, car[8], 'finished renting')
@@ -158,7 +158,7 @@ def release_car(id):
     if car is None:
         return {'message': 'Car not found'}, 404
 
-    cursor.execute('UPDATE cars SET available = 1 WHERE id = ?', (id,))
+    cursor.execute('UPDATE cars SET available = 1, locked = 1, lights = 1 WHERE id = ?', (id,))
     connection.commit()
 
     return {}, 202
