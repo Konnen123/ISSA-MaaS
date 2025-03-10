@@ -141,9 +141,17 @@ class CliManager:
             console.print(f"[red]Error:[/red] Car {car_id} not found")
             return False
         
+        # If there's a previously selected car, release it first
+        global selected_car_id
+        if selected_car_id and selected_car_id != car_id:
+            try:
+                self._api_client.release_car(selected_car_id)
+                logger.info(f"Released previously selected car {selected_car_id}")
+            except Exception as e:
+                logger.error(f"Failed to release previously selected car {selected_car_id}: {str(e)}")
+        
         # Try to select the car
         if self._api_client.select_car(car_id):
-            global selected_car_id
             selected_car_id = car_id
             console.print(f"[green]Success:[/green] Car {car_id} selected")
             
@@ -190,6 +198,15 @@ class CliManager:
         
         if self._api_client.finish_rent(car_id_to_use):
             console.print(f"[green]Success:[/green] Finished renting car {car_id_to_use}")
+            
+            # Release the car to make it available again
+            try:
+                self._api_client.release_car(car_id_to_use)
+                console.print(f"[green]Success:[/green] Released car {car_id_to_use}")
+            except Exception as e:
+                logger.error(f"Failed to release car {car_id_to_use}: {str(e)}")
+                console.print(f"[yellow]Warning:[/yellow] Failed to release car {car_id_to_use}")
+            
             selected_car_id = None
             
             # Stop socket server

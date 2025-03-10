@@ -186,4 +186,23 @@ class ApiClient:
         elif response.status_code == 404:
             raise ApiError(f"Car with ID {car_id} not found", response.status_code)
         else:
-            raise ApiError(f"Failed to get car: {response.text}", response.status_code) 
+            raise ApiError(f"Failed to get car: {response.text}", response.status_code)
+
+    @handle_error
+    def release_car(self, car_id: int) -> bool:
+        """Release a car and make it available again."""
+        url = self._get_url(f'/cars/{car_id}/release')
+        
+        logger.debug(f"Sending request to release car {car_id} from {url}")
+        response = self._session.post(url)
+        
+        if response.status_code == 202:
+            return True
+        elif response.status_code == 401:
+            raise AuthenticationError("Authentication required")
+        elif response.status_code == 404:
+            raise ApiError(f"Car with ID {car_id} not found", response.status_code)
+        elif response.status_code == 400:
+            raise ApiError(f"Cannot release car: {response.text}", response.status_code)
+        else:
+            raise ApiError(f"Failed to release car: {response.text}", response.status_code) 

@@ -1098,3 +1098,28 @@ ConnectionRefusedError: [WinError 10061] No connection could be made because the
 2025-03-10 16:15:21,761 - maas_client - INFO - Received notification: Car 2 is finished renting
 2025-03-10 16:15:21,763 - maas_client - INFO - Received notification: 
 2025-03-10 16:15:21,763 - maas_client - INFO - Socket server shutdown
+2025-03-10 16:19:05,629 - maas_client - INFO - Session cleared
+2025-03-10 16:19:05,629 - maas_client - INFO - User logged out successfully
+2025-03-10 16:19:12,301 - maas_client - INFO - New session created
+2025-03-10 16:19:12,301 - maas_client - INFO - User ceva@gmail.com logged in successfully
+2025-03-10 16:19:41,662 - maas_client - INFO - Socket server started on port 22980
+2025-03-10 16:19:41,664 - maas_client - INFO - Socket server started on port 22980
+2025-03-10 16:19:55,326 - maas_client - INFO - Released previously selected car 1
+2025-03-10 16:19:57,348 - maas_client - INFO - Received notification: 
+2025-03-10 16:19:57,349 - maas_client - INFO - Socket server shutdown
+2025-03-10 16:19:59,377 - maas_client - INFO - Socket server started on port 36163
+2025-03-10 16:19:59,378 - maas_client - INFO - Socket server started on port 36163
+2025-03-10 16:20:08,291 - maas_client - INFO - Received notification: Car 2 is rented
+2025-03-10 16:20:25,506 - maas_client - INFO - Released previously selected car 2
+2025-03-10 16:20:27,536 - maas_client - INFO - Received notification: 
+2025-03-10 16:20:27,536 - maas_client - INFO - Socket server shutdown
+2025-03-10 16:20:29,559 - maas_client - INFO - Socket server started on port 22980
+2025-03-10 16:20:29,560 - maas_client - INFO - Socket server started on port 22980
+2025-03-10 16:20:44,845 - maas_client - ERROR - API error: Cannot finish rent: {
+  "message": "Car is already locked"
+}
+
+2025-03-10 16:20:50,258 - maas_client - INFO - Received notification: Car 1 is rented
+2025-03-10 16:20:54,729 - maas_client - INFO - Received notification: Car 1 is finished renting
+2025-03-10 16:20:56,768 - maas_client - INFO - Received notification: 
+2025-03-10 16:20:56,768 - maas_client - INFO - Socket server shutdown

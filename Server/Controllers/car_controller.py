@@ -145,6 +145,24 @@ def get_car_by_id(id):
 
     return {'car': car}, 200
 
+@car_bp.route('/cars/<int:id>/release', methods=['POST'])
+def release_car(id):
+    session_token = request.cookies.get('session_token')
+
+    if not SessionService().is_session_active(session_token):
+        return {'message': 'Unauthorized'}, 401
+
+    cursor.execute('SELECT * FROM cars WHERE id = ?', (id,))
+    car = cursor.fetchone()
+
+    if car is None:
+        return {'message': 'Car not found'}, 404
+
+    cursor.execute('UPDATE cars SET available = 1 WHERE id = ?', (id,))
+    connection.commit()
+
+    return {}, 202
+
 def notify_car(car_id, car_port, status):
     cli_app_host = 'localhost'
     cli_app_port = car_port
