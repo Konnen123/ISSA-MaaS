@@ -1,0 +1,1100 @@
+2025-03-10 15:29:57,030 - maas_client - ERROR - Command failed with exit code 2
+2025-03-10 15:32:54,156 - maas_client - ERROR - Command failed with exit code 2
+2025-03-10 15:33:09,113 - maas_client - ERROR - Command failed with exit code 2
+2025-03-10 15:33:21,065 - maas_client - ERROR - Command failed with exit code 2
+2025-03-10 15:36:03,691 - maas_client - ERROR - Command failed with exit code 2: Usage: main.py login [OPTIONS] ARGS KWARGS
+Try 'main.py login --help' for help.
++- Error ---------------------------------------------------------------------+
+| No such option: --email Did you mean --help?                                |
++-----------------------------------------------------------------------------+
+
+2025-03-10 15:36:20,678 - maas_client - ERROR - Command failed with exit code 2: Usage: main.py login [OPTIONS] ARGS KWARGS
+Try 'main.py login --help' for help.
++- Error ---------------------------------------------------------------------+
+| No such option: --email Did you mean --help?                                |
++-----------------------------------------------------------------------------+
+
+2025-03-10 15:37:32,141 - maas_client - ERROR - Command failed with exit code 2: Usage: main.py login [OPTIONS] ARGS KWARGS
+Try 'main.py login --help' for help.
++- Error ---------------------------------------------------------------------+
+| No such option: --email Did you mean --help?                                |
++-----------------------------------------------------------------------------+
+
+2025-03-10 15:39:00,769 - maas_client - INFO - New session created
+2025-03-10 15:39:00,770 - maas_client - INFO - User ceva@gmail.com logged in successfully
+2025-03-10 15:39:22,479 - maas_client - INFO - Socket server started on port 62911
+2025-03-10 15:39:33,160 - maas_client - ERROR - API error: Failed to start rent: <!doctype html>
+<html lang=en>
+  <head>
+    <title>ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+ // Werkzeug Debugger</title>
+    <link rel="stylesheet" href="?__debugger__=yes&amp;cmd=resource&amp;f=style.css">
+    <link rel="shortcut icon"
+        href="?__debugger__=yes&amp;cmd=resource&amp;f=console.png">
+    <script src="?__debugger__=yes&amp;cmd=resource&amp;f=debugger.js"></script>
+    <script>
+      var CONSOLE_MODE = false,
+          EVALEX = true,
+          EVALEX_TRUSTED = false,
+          SECRET = "McN94I52CvLlgB1FNNAK";
+    </script>
+  </head>
+  <body style="background-color: #fff">
+    <div class="debugger">
+<h1>ConnectionRefusedError</h1>
+<div class="detail">
+  <p class="errormsg">ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+</p>
+</div>
+<h2 class="traceback">Traceback <em>(most recent call last)</em></h2>
+<div class="traceback">
+  <h3></h3>
+  <ul><li><div class="frame" id="frame-1922768098288">
+  <h4>File <cite class="filename">"C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py"</cite>,
+      line <em class="line">1536</em>,
+      in <code class="function">__call__</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">    </span>) -&gt; cabc.Iterable[bytes]:</pre>
+<pre class="line before"><span class="ws">        </span>&#34;&#34;&#34;The WSGI server calls the Flask application object as the</pre>
+<pre class="line before"><span class="ws">        </span>WSGI application. This calls :meth:`wsgi_app`, which can be</pre>
+<pre class="line before"><span class="ws">        </span>wrapped to apply middleware.</pre>
+<pre class="line before"><span class="ws">        </span>&#34;&#34;&#34;</pre>
+<pre class="line current"><span class="ws">        </span>return self.wsgi_app(environ, start_response)
+<span class="ws">        </span>       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></div>
+</div>
+
+<li><div class="frame" id="frame-1922768100160">
+  <h4>File <cite class="filename">"C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py"</cite>,
+      line <em class="line">1514</em>,
+      in <code class="function">wsgi_app</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span>try:</pre>
+<pre class="line before"><span class="ws">                </span>ctx.push()</pre>
+<pre class="line before"><span class="ws">                </span>response = self.full_dispatch_request()</pre>
+<pre class="line before"><span class="ws">            </span>except Exception as e:</pre>
+<pre class="line before"><span class="ws">                </span>error = e</pre>
+<pre class="line current"><span class="ws">                </span>response = self.handle_exception(e)
+<span class="ws">                </span>           ^^^^^^^^^^^^^^^^^^^^^^^^</pre>
+<pre class="line after"><span class="ws">            </span>except:  # noqa: B001</pre>
+<pre class="line after"><span class="ws">                </span>error = sys.exc_info()[1]</pre>
+<pre class="line after"><span class="ws">                </span>raise</pre>
+<pre class="line after"><span class="ws">            </span>return response(environ, start_response)</pre>
+<pre class="line after"><span class="ws">        </span>finally:</pre></div>
+</div>
+
+<li><div class="frame" id="frame-1922768100304">
+  <h4>File <cite class="filename">"C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py"</cite>,
+      line <em class="line">1511</em>,
+      in <code class="function">wsgi_app</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">        </span>ctx = self.request_context(environ)</pre>
+<pre class="line before"><span class="ws">        </span>error: BaseException | None = None</pre>
+<pre class="line before"><span class="ws">        </span>try:</pre>
+<pre class="line before"><span class="ws">            </span>try:</pre>
+<pre class="line before"><span class="ws">                </span>ctx.push()</pre>
+<pre class="line current"><span class="ws">                </span>response = self.full_dispatch_request()
+<span class="ws">                </span>           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre>
+<pre class="line after"><span class="ws">            </span>except Exception as e:</pre>
+<pre class="line after"><span class="ws">                </span>error = e</pre>
+<pre class="line after"><span class="ws">                </span>response = self.handle_exception(e)</pre>
+<pre class="line after"><span class="ws">            </span>except:  # noqa: B001</pre>
+<pre class="line after"><span class="ws">                </span>error = sys.exc_info()[1]</pre></div>
+</div>
+
+<li><div class="frame" id="frame-1922768100448">
+  <h4>File <cite class="filename">"C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py"</cite>,
+      line <em class="line">919</em>,
+      in <code class="function">full_dispatch_request</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span>request_started.send(self, _async_wrapper=self.ensure_sync)</pre>
+<pre class="line before"><span class="ws">            </span>rv = self.preprocess_request()</pre>
+<pre class="line before"><span class="ws">            </span>if rv is None:</pre>
+<pre class="line before"><span class="ws">                </span>rv = self.dispatch_request()</pre>
+<pre class="line before"><span class="ws">        </span>except Exception as e:</pre>
+<pre class="line current"><span class="ws">            </span>rv = self.handle_user_exception(e)
+<span class="ws">            </span>     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre>
+<pre class="line after"><span class="ws">        </span>return self.finalize_request(rv)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def finalize_request(</pre>
+<pre class="line after"><span class="ws">        </span>self,</pre>
+<pre class="line after"><span class="ws">        </span>rv: ft.ResponseReturnValue | HTTPException,</pre></div>
+</div>
+
+<li><div class="frame" id="frame-1922768100592">
+  <h4>File <cite class="filename">"C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py"</cite>,
+      line <em class="line">917</em>,
+      in <code class="function">full_dispatch_request</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">        </span>try:</pre>
+<pre class="line before"><span class="ws">            </span>request_started.send(self, _async_wrapper=self.ensure_sync)</pre>
+<pre class="line before"><span class="ws">            </span>rv = self.preprocess_request()</pre>
+<pre class="line before"><span class="ws">            </span>if rv is None:</pre>
+<pre class="line current"><span class="ws">                </span>rv = self.dispatch_request()
+<span class="ws">                </span>     ^^^^^^^^^^^^^^^^^^^^^^^</pre>
+<pre class="line after"><span class="ws">        </span>except Exception as e:</pre>
+<pre class="line after"><span class="ws">            </span>rv = self.handle_user_exception(e)</pre>
+<pre class="line after"><span class="ws">        </span>return self.finalize_request(rv)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def finalize_request(</pre></div>
+</div>
+
+<li><div class="frame" id="frame-1922768100736">
+  <h4>File <cite class="filename">"C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py"</cite>,
+      line <em class="line">902</em>,
+      in <code class="function">dispatch_request</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span>and req.method == &#34;OPTIONS&#34;</pre>
+<pre class="line before"><span class="ws">        </span>):</pre>
+<pre class="line before"><span class="ws">            </span>return self.make_default_options_response()</pre>
+<pre class="line before"><span class="ws">        </span># otherwise dispatch to the handler for that endpoint</pre>
+<pre class="line before"><span class="ws">        </span>view_args: dict[str, t.Any] = req.view_args  # type: ignore[assignment]</pre>
+<pre class="line current"><span class="ws">        </span>return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+<span class="ws">        </span>       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def full_dispatch_request(self) -&gt; Response:</pre>
+<pre class="line after"><span class="ws">        </span>&#34;&#34;&#34;Dispatches the request and on top of that performs request</pre>
+<pre class="line after"><span class="ws">        </span>pre and postprocessing as well as HTTP exception catching and</pre>
+<pre class="line after"><span class="ws">        </span>error handling.</pre></div>
+</div>
+
+<li><div class="frame" id="frame-1922768100880">
+  <h4>File <cite class="filename">"d:\ISSA\LAB2-3\ISSA-MaaS\Server\Controllers\car_controller.py"</cite>,
+      line <em class="line">91</em>,
+      in <code class="function">start_rent_car</code></h4>
+  <div class="source "><pre class="line before"><span class="ws">        </span>return {&#39;message&#39;: &#39;Car is already unlocked&#39;}, 400</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">    </span>cursor.execute(&#39;UPDATE cars SET locked = 0 WHERE id = ?&#39;, (id,))</pre>
+<pre class="line before"><span class="ws">    </span>connection.commit()</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line current"><span class="ws">    </span>notify_car(id, car[8], &#39;rented&#39;)
+<span class="ws">    </span>^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>return {}, 202</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws"></span>@car_bp.route(&#39;/cars/rental/&lt;int:id&gt;&#39;, methods=[&#39;DELETE&#39;])</pre>
+<pre class="line after"><span class="ws"></span>def finish_rent_car(id):</pre></div>
+</div>
+
+<li><div class="frame" id="frame-1922768101024">
+  <h4>File <cite class="filename">"d:\ISSA\LAB2-3\ISSA-MaaS\Server\Controllers\car_controller.py"</cite>,
+      line <em class="line">128</em>,
+      in <code class="function">notify_car</code></h4>
+  <div class="source "><pre class="line before"><span class="ws">    </span>cli_app_host = &#39;localhost&#39;</pre>
+<pre class="line before"><span class="ws">    </span>cli_app_port = car_port</pre>
+<pre class="line before"><span class="ws">    </span>message = f&#39;Car {car_id} is {status}&#39;</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">    </span>with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:</pre>
+<pre class="line current"><span class="ws">        </span>s.connect((cli_app_host, cli_app_port))
+<span class="ws">        </span>^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre>
+<pre class="line after"><span class="ws">        </span>s.sendall(message.encode())</pre></div>
+</div>
+</ul>
+  <blockquote>ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+</blockquote>
+</div>
+
+<div class="plain">
+    <p>
+      This is the Copy/Paste friendly version of the traceback.
+    </p>
+    <textarea cols="50" rows="10" name="code" readonly>Traceback (most recent call last):
+  File &#34;C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py&#34;, line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &#34;C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py&#34;, line 1514, in wsgi_app
+    response = self.handle_exception(e)
+  File &#34;C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py&#34;, line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File &#34;C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py&#34;, line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File &#34;C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py&#34;, line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File &#34;C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py&#34;, line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File &#34;d:\ISSA\LAB2-3\ISSA-MaaS\Server\Controllers\car_controller.py&#34;, line 91, in start_rent_car
+    notify_car(id, car[8], &#39;rented&#39;)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File &#34;d:\ISSA\LAB2-3\ISSA-MaaS\Server\Controllers\car_controller.py&#34;, line 128, in notify_car
+    s.connect((cli_app_host, cli_app_port))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+</textarea>
+</div>
+<div class="explanation">
+  The debugger caught an exception in your WSGI application.  You can now
+  look at the traceback which led to the error.  <span class="nojavascript">
+  If you enable JavaScript you can also use additional features such as code
+  execution (if the evalex feature is enabled), automatic pasting of the
+  exceptions and much more.</span>
+</div>
+      <div class="footer">
+        Brought to you by <strong class="arthur">DON'T PANIC</strong>, your
+        friendly Werkzeug powered traceback interpreter.
+      </div>
+    </div>
+
+    <div class="pin-prompt">
+      <div class="inner">
+        <h3>Console Locked</h3>
+        <p>
+          The console is locked and needs to be unlocked by entering the PIN.
+          You can find the PIN printed out on the standard output of your
+          shell that runs the server.
+        <form>
+          <p>PIN:
+            <input type=text name=pin size=14>
+            <input type=submit name=btn value="Confirm Pin">
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!--
+
+Traceback (most recent call last):
+  File "C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1514, in wsgi_app
+    response = self.handle_exception(e)
+  File "C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "d:\ISSA\LAB2-3\ISSA-MaaS\Server\Controllers\car_controller.py", line 91, in start_rent_car
+    notify_car(id, car[8], 'rented')
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\ISSA\LAB2-3\ISSA-MaaS\Server\Controllers\car_controller.py", line 128, in notify_car
+    s.connect((cli_app_host, cli_app_port))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+
+-->
+
+2025-03-10 15:40:27,819 - maas_client - ERROR - API error: Cannot start rent: {
+  "message": "Car is already unlocked"
+}
+
+2025-03-10 15:44:46,004 - maas_client - WARNING - User is already logged in
+2025-03-10 15:44:48,447 - maas_client - INFO - Session cleared
+2025-03-10 15:44:48,447 - maas_client - INFO - User logged out successfully
+2025-03-10 15:44:58,518 - maas_client - ERROR - Authentication error: Invalid credentials
+2025-03-10 15:45:35,280 - maas_client - INFO - User nou@yahoo.com registered successfully
+2025-03-10 15:45:48,658 - maas_client - INFO - New session created
+2025-03-10 15:45:48,658 - maas_client - INFO - User nou@yahoo.com logged in successfully
+2025-03-10 15:46:02,873 - maas_client - INFO - Socket server started on port 63003
+2025-03-10 15:46:13,967 - maas_client - ERROR - API error: Failed to start rent: <!doctype html>
+<html lang=en>
+  <head>
+    <title>ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+ // Werkzeug Debugger</title>
+    <link rel="stylesheet" href="?__debugger__=yes&amp;cmd=resource&amp;f=style.css">
+    <link rel="shortcut icon"
+        href="?__debugger__=yes&amp;cmd=resource&amp;f=console.png">
+    <script src="?__debugger__=yes&amp;cmd=resource&amp;f=debugger.js"></script>
+    <script>
+      var CONSOLE_MODE = false,
+          EVALEX = true,
+          EVALEX_TRUSTED = false,
+          SECRET = "McN94I52CvLlgB1FNNAK";
+    </script>
+  </head>
+  <body style="background-color: #fff">
+    <div class="debugger">
+<h1>ConnectionRefusedError</h1>
+<div class="detail">
+  <p class="errormsg">ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+</p>
+</div>
+<h2 class="traceback">Traceback <em>(most recent call last)</em></h2>
+<div class="traceback">
+  <h3></h3>
+  <ul><li><div class="frame" id="frame-1922768101744">
+  <h4>File <cite class="filename">"C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py"</cite>,
+      line <em class="line">1536</em>,
+      in <code class="function">__call__</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">    </span>) -&gt; cabc.Iterable[bytes]:</pre>
+<pre class="line before"><span class="ws">        </span>&#34;&#34;&#34;The WSGI server calls the Flask application object as the</pre>
+<pre class="line before"><span class="ws">        </span>WSGI application. This calls :meth:`wsgi_app`, which can be</pre>
+<pre class="line before"><span class="ws">        </span>wrapped to apply middleware.</pre>
+<pre class="line before"><span class="ws">        </span>&#34;&#34;&#34;</pre>
+<pre class="line current"><span class="ws">        </span>return self.wsgi_app(environ, start_response)
+<span class="ws">        </span>       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></div>
+</div>
+
+<li><div class="frame" id="frame-1922768101888">
+  <h4>File <cite class="filename">"C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py"</cite>,
+      line <em class="line">1514</em>,
+      in <code class="function">wsgi_app</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span>try:</pre>
+<pre class="line before"><span class="ws">                </span>ctx.push()</pre>
+<pre class="line before"><span class="ws">                </span>response = self.full_dispatch_request()</pre>
+<pre class="line before"><span class="ws">            </span>except Exception as e:</pre>
+<pre class="line before"><span class="ws">                </span>error = e</pre>
+<pre class="line current"><span class="ws">                </span>response = self.handle_exception(e)
+<span class="ws">                </span>           ^^^^^^^^^^^^^^^^^^^^^^^^</pre>
+<pre class="line after"><span class="ws">            </span>except:  # noqa: B001</pre>
+<pre class="line after"><span class="ws">                </span>error = sys.exc_info()[1]</pre>
+<pre class="line after"><span class="ws">                </span>raise</pre>
+<pre class="line after"><span class="ws">            </span>return response(environ, start_response)</pre>
+<pre class="line after"><span class="ws">        </span>finally:</pre></div>
+</div>
+
+<li><div class="frame" id="frame-1922768101456">
+  <h4>File <cite class="filename">"C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py"</cite>,
+      line <em class="line">1511</em>,
+      in <code class="function">wsgi_app</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">        </span>ctx = self.request_context(environ)</pre>
+<pre class="line before"><span class="ws">        </span>error: BaseException | None = None</pre>
+<pre class="line before"><span class="ws">        </span>try:</pre>
+<pre class="line before"><span class="ws">            </span>try:</pre>
+<pre class="line before"><span class="ws">                </span>ctx.push()</pre>
+<pre class="line current"><span class="ws">                </span>response = self.full_dispatch_request()
+<span class="ws">                </span>           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre>
+<pre class="line after"><span class="ws">            </span>except Exception as e:</pre>
+<pre class="line after"><span class="ws">                </span>error = e</pre>
+<pre class="line after"><span class="ws">                </span>response = self.handle_exception(e)</pre>
+<pre class="line after"><span class="ws">            </span>except:  # noqa: B001</pre>
+<pre class="line after"><span class="ws">                </span>error = sys.exc_info()[1]</pre></div>
+</div>
+
+<li><div class="frame" id="frame-1922768101600">
+  <h4>File <cite class="filename">"C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py"</cite>,
+      line <em class="line">919</em>,
+      in <code class="function">full_dispatch_request</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span>request_started.send(self, _async_wrapper=self.ensure_sync)</pre>
+<pre class="line before"><span class="ws">            </span>rv = self.preprocess_request()</pre>
+<pre class="line before"><span class="ws">            </span>if rv is None:</pre>
+<pre class="line before"><span class="ws">                </span>rv = self.dispatch_request()</pre>
+<pre class="line before"><span class="ws">        </span>except Exception as e:</pre>
+<pre class="line current"><span class="ws">            </span>rv = self.handle_user_exception(e)
+<span class="ws">            </span>     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre>
+<pre class="line after"><span class="ws">        </span>return self.finalize_request(rv)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def finalize_request(</pre>
+<pre class="line after"><span class="ws">        </span>self,</pre>
+<pre class="line after"><span class="ws">        </span>rv: ft.ResponseReturnValue | HTTPException,</pre></div>
+</div>
+
+<li><div class="frame" id="frame-1922768101312">
+  <h4>File <cite class="filename">"C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py"</cite>,
+      line <em class="line">917</em>,
+      in <code class="function">full_dispatch_request</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">        </span>try:</pre>
+<pre class="line before"><span class="ws">            </span>request_started.send(self, _async_wrapper=self.ensure_sync)</pre>
+<pre class="line before"><span class="ws">            </span>rv = self.preprocess_request()</pre>
+<pre class="line before"><span class="ws">            </span>if rv is None:</pre>
+<pre class="line current"><span class="ws">                </span>rv = self.dispatch_request()
+<span class="ws">                </span>     ^^^^^^^^^^^^^^^^^^^^^^^</pre>
+<pre class="line after"><span class="ws">        </span>except Exception as e:</pre>
+<pre class="line after"><span class="ws">            </span>rv = self.handle_user_exception(e)</pre>
+<pre class="line after"><span class="ws">        </span>return self.finalize_request(rv)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def finalize_request(</pre></div>
+</div>
+
+<li><div class="frame" id="frame-1922768101168">
+  <h4>File <cite class="filename">"C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py"</cite>,
+      line <em class="line">902</em>,
+      in <code class="function">dispatch_request</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span>and req.method == &#34;OPTIONS&#34;</pre>
+<pre class="line before"><span class="ws">        </span>):</pre>
+<pre class="line before"><span class="ws">            </span>return self.make_default_options_response()</pre>
+<pre class="line before"><span class="ws">        </span># otherwise dispatch to the handler for that endpoint</pre>
+<pre class="line before"><span class="ws">        </span>view_args: dict[str, t.Any] = req.view_args  # type: ignore[assignment]</pre>
+<pre class="line current"><span class="ws">        </span>return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+<span class="ws">        </span>       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def full_dispatch_request(self) -&gt; Response:</pre>
+<pre class="line after"><span class="ws">        </span>&#34;&#34;&#34;Dispatches the request and on top of that performs request</pre>
+<pre class="line after"><span class="ws">        </span>pre and postprocessing as well as HTTP exception catching and</pre>
+<pre class="line after"><span class="ws">        </span>error handling.</pre></div>
+</div>
+
+<li><div class="frame" id="frame-1922768099296">
+  <h4>File <cite class="filename">"d:\ISSA\LAB2-3\ISSA-MaaS\Server\Controllers\car_controller.py"</cite>,
+      line <em class="line">91</em>,
+      in <code class="function">start_rent_car</code></h4>
+  <div class="source "><pre class="line before"><span class="ws">        </span>return {&#39;message&#39;: &#39;Car is already unlocked&#39;}, 400</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">    </span>cursor.execute(&#39;UPDATE cars SET locked = 0 WHERE id = ?&#39;, (id,))</pre>
+<pre class="line before"><span class="ws">    </span>connection.commit()</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line current"><span class="ws">    </span>notify_car(id, car[8], &#39;rented&#39;)
+<span class="ws">    </span>^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>return {}, 202</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws"></span>@car_bp.route(&#39;/cars/rental/&lt;int:id&gt;&#39;, methods=[&#39;DELETE&#39;])</pre>
+<pre class="line after"><span class="ws"></span>def finish_rent_car(id):</pre></div>
+</div>
+
+<li><div class="frame" id="frame-1922768098720">
+  <h4>File <cite class="filename">"d:\ISSA\LAB2-3\ISSA-MaaS\Server\Controllers\car_controller.py"</cite>,
+      line <em class="line">128</em>,
+      in <code class="function">notify_car</code></h4>
+  <div class="source "><pre class="line before"><span class="ws">    </span>cli_app_host = &#39;localhost&#39;</pre>
+<pre class="line before"><span class="ws">    </span>cli_app_port = car_port</pre>
+<pre class="line before"><span class="ws">    </span>message = f&#39;Car {car_id} is {status}&#39;</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">    </span>with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:</pre>
+<pre class="line current"><span class="ws">        </span>s.connect((cli_app_host, cli_app_port))
+<span class="ws">        </span>^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre>
+<pre class="line after"><span class="ws">        </span>s.sendall(message.encode())</pre></div>
+</div>
+</ul>
+  <blockquote>ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+</blockquote>
+</div>
+
+<div class="plain">
+    <p>
+      This is the Copy/Paste friendly version of the traceback.
+    </p>
+    <textarea cols="50" rows="10" name="code" readonly>Traceback (most recent call last):
+  File &#34;C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py&#34;, line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &#34;C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py&#34;, line 1514, in wsgi_app
+    response = self.handle_exception(e)
+  File &#34;C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py&#34;, line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File &#34;C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py&#34;, line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File &#34;C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py&#34;, line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File &#34;C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py&#34;, line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File &#34;d:\ISSA\LAB2-3\ISSA-MaaS\Server\Controllers\car_controller.py&#34;, line 91, in start_rent_car
+    notify_car(id, car[8], &#39;rented&#39;)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File &#34;d:\ISSA\LAB2-3\ISSA-MaaS\Server\Controllers\car_controller.py&#34;, line 128, in notify_car
+    s.connect((cli_app_host, cli_app_port))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+</textarea>
+</div>
+<div class="explanation">
+  The debugger caught an exception in your WSGI application.  You can now
+  look at the traceback which led to the error.  <span class="nojavascript">
+  If you enable JavaScript you can also use additional features such as code
+  execution (if the evalex feature is enabled), automatic pasting of the
+  exceptions and much more.</span>
+</div>
+      <div class="footer">
+        Brought to you by <strong class="arthur">DON'T PANIC</strong>, your
+        friendly Werkzeug powered traceback interpreter.
+      </div>
+    </div>
+
+    <div class="pin-prompt">
+      <div class="inner">
+        <h3>Console Locked</h3>
+        <p>
+          The console is locked and needs to be unlocked by entering the PIN.
+          You can find the PIN printed out on the standard output of your
+          shell that runs the server.
+        <form>
+          <p>PIN:
+            <input type=text name=pin size=14>
+            <input type=submit name=btn value="Confirm Pin">
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!--
+
+Traceback (most recent call last):
+  File "C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1514, in wsgi_app
+    response = self.handle_exception(e)
+  File "C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "d:\ISSA\LAB2-3\ISSA-MaaS\Server\Controllers\car_controller.py", line 91, in start_rent_car
+    notify_car(id, car[8], 'rented')
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\ISSA\LAB2-3\ISSA-MaaS\Server\Controllers\car_controller.py", line 128, in notify_car
+    s.connect((cli_app_host, cli_app_port))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+
+-->
+
+2025-03-10 15:48:42,819 - maas_client - INFO - Session cleared
+2025-03-10 15:48:42,819 - maas_client - INFO - User logged out successfully
+2025-03-10 15:48:50,831 - maas_client - INFO - New session created
+2025-03-10 15:48:50,831 - maas_client - INFO - User nou@yahoo.com logged in successfully
+2025-03-10 15:49:20,019 - maas_client - INFO - Socket server started on port 63074
+2025-03-10 15:50:54,048 - maas_client - INFO - Session cleared
+2025-03-10 15:50:54,049 - maas_client - INFO - User logged out successfully
+2025-03-10 15:50:54,050 - maas_client - INFO - Received notification: 
+2025-03-10 15:50:54,050 - maas_client - INFO - Socket server shutdown
+2025-03-10 15:51:55,856 - maas_client - ERROR - Connection error: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /api/v1/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000024E1037EF90>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+2025-03-10 15:52:22,864 - maas_client - ERROR - Authentication error: Invalid credentials
+2025-03-10 15:52:30,954 - maas_client - INFO - New session created
+2025-03-10 15:52:30,954 - maas_client - INFO - User ceva@gmail.com logged in successfully
+2025-03-10 15:52:44,627 - maas_client - INFO - Socket server started on port 63128
+2025-03-10 15:52:55,259 - maas_client - ERROR - API error: Failed to start rent: <!doctype html>
+<html lang=en>
+  <head>
+    <title>ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+ // Werkzeug Debugger</title>
+    <link rel="stylesheet" href="?__debugger__=yes&amp;cmd=resource&amp;f=style.css">
+    <link rel="shortcut icon"
+        href="?__debugger__=yes&amp;cmd=resource&amp;f=console.png">
+    <script src="?__debugger__=yes&amp;cmd=resource&amp;f=debugger.js"></script>
+    <script>
+      var CONSOLE_MODE = false,
+          EVALEX = true,
+          EVALEX_TRUSTED = false,
+          SECRET = "gHZcqGqWSv9lIGZcdUR6";
+    </script>
+  </head>
+  <body style="background-color: #fff">
+    <div class="debugger">
+<h1>ConnectionRefusedError</h1>
+<div class="detail">
+  <p class="errormsg">ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+</p>
+</div>
+<h2 class="traceback">Traceback <em>(most recent call last)</em></h2>
+<div class="traceback">
+  <h3></h3>
+  <ul><li><div class="frame" id="frame-2861476140016">
+  <h4>File <cite class="filename">"C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py"</cite>,
+      line <em class="line">1536</em>,
+      in <code class="function">__call__</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">    </span>) -&gt; cabc.Iterable[bytes]:</pre>
+<pre class="line before"><span class="ws">        </span>&#34;&#34;&#34;The WSGI server calls the Flask application object as the</pre>
+<pre class="line before"><span class="ws">        </span>WSGI application. This calls :meth:`wsgi_app`, which can be</pre>
+<pre class="line before"><span class="ws">        </span>wrapped to apply middleware.</pre>
+<pre class="line before"><span class="ws">        </span>&#34;&#34;&#34;</pre>
+<pre class="line current"><span class="ws">        </span>return self.wsgi_app(environ, start_response)
+<span class="ws">        </span>       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></div>
+</div>
+
+<li><div class="frame" id="frame-2861476141312">
+  <h4>File <cite class="filename">"C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py"</cite>,
+      line <em class="line">1514</em>,
+      in <code class="function">wsgi_app</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span>try:</pre>
+<pre class="line before"><span class="ws">                </span>ctx.push()</pre>
+<pre class="line before"><span class="ws">                </span>response = self.full_dispatch_request()</pre>
+<pre class="line before"><span class="ws">            </span>except Exception as e:</pre>
+<pre class="line before"><span class="ws">                </span>error = e</pre>
+<pre class="line current"><span class="ws">                </span>response = self.handle_exception(e)
+<span class="ws">                </span>           ^^^^^^^^^^^^^^^^^^^^^^^^</pre>
+<pre class="line after"><span class="ws">            </span>except:  # noqa: B001</pre>
+<pre class="line after"><span class="ws">                </span>error = sys.exc_info()[1]</pre>
+<pre class="line after"><span class="ws">                </span>raise</pre>
+<pre class="line after"><span class="ws">            </span>return response(environ, start_response)</pre>
+<pre class="line after"><span class="ws">        </span>finally:</pre></div>
+</div>
+
+<li><div class="frame" id="frame-2861476141456">
+  <h4>File <cite class="filename">"C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py"</cite>,
+      line <em class="line">1511</em>,
+      in <code class="function">wsgi_app</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">        </span>ctx = self.request_context(environ)</pre>
+<pre class="line before"><span class="ws">        </span>error: BaseException | None = None</pre>
+<pre class="line before"><span class="ws">        </span>try:</pre>
+<pre class="line before"><span class="ws">            </span>try:</pre>
+<pre class="line before"><span class="ws">                </span>ctx.push()</pre>
+<pre class="line current"><span class="ws">                </span>response = self.full_dispatch_request()
+<span class="ws">                </span>           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre>
+<pre class="line after"><span class="ws">            </span>except Exception as e:</pre>
+<pre class="line after"><span class="ws">                </span>error = e</pre>
+<pre class="line after"><span class="ws">                </span>response = self.handle_exception(e)</pre>
+<pre class="line after"><span class="ws">            </span>except:  # noqa: B001</pre>
+<pre class="line after"><span class="ws">                </span>error = sys.exc_info()[1]</pre></div>
+</div>
+
+<li><div class="frame" id="frame-2861476141600">
+  <h4>File <cite class="filename">"C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py"</cite>,
+      line <em class="line">919</em>,
+      in <code class="function">full_dispatch_request</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span>request_started.send(self, _async_wrapper=self.ensure_sync)</pre>
+<pre class="line before"><span class="ws">            </span>rv = self.preprocess_request()</pre>
+<pre class="line before"><span class="ws">            </span>if rv is None:</pre>
+<pre class="line before"><span class="ws">                </span>rv = self.dispatch_request()</pre>
+<pre class="line before"><span class="ws">        </span>except Exception as e:</pre>
+<pre class="line current"><span class="ws">            </span>rv = self.handle_user_exception(e)
+<span class="ws">            </span>     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre>
+<pre class="line after"><span class="ws">        </span>return self.finalize_request(rv)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def finalize_request(</pre>
+<pre class="line after"><span class="ws">        </span>self,</pre>
+<pre class="line after"><span class="ws">        </span>rv: ft.ResponseReturnValue | HTTPException,</pre></div>
+</div>
+
+<li><div class="frame" id="frame-2861476141744">
+  <h4>File <cite class="filename">"C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py"</cite>,
+      line <em class="line">917</em>,
+      in <code class="function">full_dispatch_request</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">        </span>try:</pre>
+<pre class="line before"><span class="ws">            </span>request_started.send(self, _async_wrapper=self.ensure_sync)</pre>
+<pre class="line before"><span class="ws">            </span>rv = self.preprocess_request()</pre>
+<pre class="line before"><span class="ws">            </span>if rv is None:</pre>
+<pre class="line current"><span class="ws">                </span>rv = self.dispatch_request()
+<span class="ws">                </span>     ^^^^^^^^^^^^^^^^^^^^^^^</pre>
+<pre class="line after"><span class="ws">        </span>except Exception as e:</pre>
+<pre class="line after"><span class="ws">            </span>rv = self.handle_user_exception(e)</pre>
+<pre class="line after"><span class="ws">        </span>return self.finalize_request(rv)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def finalize_request(</pre></div>
+</div>
+
+<li><div class="frame" id="frame-2861476141888">
+  <h4>File <cite class="filename">"C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py"</cite>,
+      line <em class="line">902</em>,
+      in <code class="function">dispatch_request</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span>and req.method == &#34;OPTIONS&#34;</pre>
+<pre class="line before"><span class="ws">        </span>):</pre>
+<pre class="line before"><span class="ws">            </span>return self.make_default_options_response()</pre>
+<pre class="line before"><span class="ws">        </span># otherwise dispatch to the handler for that endpoint</pre>
+<pre class="line before"><span class="ws">        </span>view_args: dict[str, t.Any] = req.view_args  # type: ignore[assignment]</pre>
+<pre class="line current"><span class="ws">        </span>return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+<span class="ws">        </span>       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def full_dispatch_request(self) -&gt; Response:</pre>
+<pre class="line after"><span class="ws">        </span>&#34;&#34;&#34;Dispatches the request and on top of that performs request</pre>
+<pre class="line after"><span class="ws">        </span>pre and postprocessing as well as HTTP exception catching and</pre>
+<pre class="line after"><span class="ws">        </span>error handling.</pre></div>
+</div>
+
+<li><div class="frame" id="frame-2861476142032">
+  <h4>File <cite class="filename">"d:\ISSA\LAB2-3\ISSA-MaaS\Server\Controllers\car_controller.py"</cite>,
+      line <em class="line">91</em>,
+      in <code class="function">start_rent_car</code></h4>
+  <div class="source "><pre class="line before"><span class="ws">        </span>return {&#39;message&#39;: &#39;Car is already unlocked&#39;}, 400</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">    </span>cursor.execute(&#39;UPDATE cars SET locked = 0 WHERE id = ?&#39;, (id,))</pre>
+<pre class="line before"><span class="ws">    </span>connection.commit()</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line current"><span class="ws">    </span>notify_car(id, car[8], &#39;rented&#39;)
+<span class="ws">    </span>^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>return {}, 202</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws"></span>@car_bp.route(&#39;/cars/rental/&lt;int:id&gt;&#39;, methods=[&#39;DELETE&#39;])</pre>
+<pre class="line after"><span class="ws"></span>def finish_rent_car(id):</pre></div>
+</div>
+
+<li><div class="frame" id="frame-2861476142176">
+  <h4>File <cite class="filename">"d:\ISSA\LAB2-3\ISSA-MaaS\Server\Controllers\car_controller.py"</cite>,
+      line <em class="line">128</em>,
+      in <code class="function">notify_car</code></h4>
+  <div class="source "><pre class="line before"><span class="ws">    </span>cli_app_host = &#39;localhost&#39;</pre>
+<pre class="line before"><span class="ws">    </span>cli_app_port = car_port</pre>
+<pre class="line before"><span class="ws">    </span>message = f&#39;Car {car_id} is {status}&#39;</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">    </span>with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:</pre>
+<pre class="line current"><span class="ws">        </span>s.connect((cli_app_host, cli_app_port))
+<span class="ws">        </span>^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre>
+<pre class="line after"><span class="ws">        </span>s.sendall(message.encode())</pre></div>
+</div>
+</ul>
+  <blockquote>ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+</blockquote>
+</div>
+
+<div class="plain">
+    <p>
+      This is the Copy/Paste friendly version of the traceback.
+    </p>
+    <textarea cols="50" rows="10" name="code" readonly>Traceback (most recent call last):
+  File &#34;C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py&#34;, line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &#34;C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py&#34;, line 1514, in wsgi_app
+    response = self.handle_exception(e)
+  File &#34;C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py&#34;, line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File &#34;C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py&#34;, line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File &#34;C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py&#34;, line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File &#34;C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py&#34;, line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File &#34;d:\ISSA\LAB2-3\ISSA-MaaS\Server\Controllers\car_controller.py&#34;, line 91, in start_rent_car
+    notify_car(id, car[8], &#39;rented&#39;)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File &#34;d:\ISSA\LAB2-3\ISSA-MaaS\Server\Controllers\car_controller.py&#34;, line 128, in notify_car
+    s.connect((cli_app_host, cli_app_port))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+</textarea>
+</div>
+<div class="explanation">
+  The debugger caught an exception in your WSGI application.  You can now
+  look at the traceback which led to the error.  <span class="nojavascript">
+  If you enable JavaScript you can also use additional features such as code
+  execution (if the evalex feature is enabled), automatic pasting of the
+  exceptions and much more.</span>
+</div>
+      <div class="footer">
+        Brought to you by <strong class="arthur">DON'T PANIC</strong>, your
+        friendly Werkzeug powered traceback interpreter.
+      </div>
+    </div>
+
+    <div class="pin-prompt">
+      <div class="inner">
+        <h3>Console Locked</h3>
+        <p>
+          The console is locked and needs to be unlocked by entering the PIN.
+          You can find the PIN printed out on the standard output of your
+          shell that runs the server.
+        <form>
+          <p>PIN:
+            <input type=text name=pin size=14>
+            <input type=submit name=btn value="Confirm Pin">
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!--
+
+Traceback (most recent call last):
+  File "C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1514, in wsgi_app
+    response = self.handle_exception(e)
+  File "C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "d:\ISSA\LAB2-3\ISSA-MaaS\Server\Controllers\car_controller.py", line 91, in start_rent_car
+    notify_car(id, car[8], 'rented')
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\ISSA\LAB2-3\ISSA-MaaS\Server\Controllers\car_controller.py", line 128, in notify_car
+    s.connect((cli_app_host, cli_app_port))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+
+-->
+
+2025-03-10 15:56:37,008 - maas_client - INFO - Received notification: 
+2025-03-10 15:56:37,008 - maas_client - INFO - Socket server shutdown
+2025-03-10 15:56:37,009 - maas_client - INFO - Socket server stopped
+2025-03-10 15:56:44,094 - maas_client - INFO - Session cleared
+2025-03-10 15:56:44,094 - maas_client - INFO - User logged out successfully
+2025-03-10 15:56:51,688 - maas_client - INFO - New session created
+2025-03-10 15:56:51,688 - maas_client - INFO - User ceva@gmail.com logged in successfully
+2025-03-10 15:57:14,366 - maas_client - INFO - Socket server started on port 63212
+2025-03-10 15:57:14,366 - maas_client - INFO - Socket server started on port 63212
+2025-03-10 15:57:14,368 - maas_client - INFO - Received notification: 
+2025-03-10 15:57:14,368 - maas_client - INFO - Socket server shutdown
+2025-03-10 15:57:16,385 - maas_client - INFO - Socket server started on port 63217
+2025-03-10 15:57:16,386 - maas_client - INFO - Socket server started on port 63217
+2025-03-10 15:57:28,625 - maas_client - ERROR - API error: Failed to start rent: <!doctype html>
+<html lang=en>
+  <head>
+    <title>ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+ // Werkzeug Debugger</title>
+    <link rel="stylesheet" href="?__debugger__=yes&amp;cmd=resource&amp;f=style.css">
+    <link rel="shortcut icon"
+        href="?__debugger__=yes&amp;cmd=resource&amp;f=console.png">
+    <script src="?__debugger__=yes&amp;cmd=resource&amp;f=debugger.js"></script>
+    <script>
+      var CONSOLE_MODE = false,
+          EVALEX = true,
+          EVALEX_TRUSTED = false,
+          SECRET = "9Pc2bu97IcBGd7D4VXb4";
+    </script>
+  </head>
+  <body style="background-color: #fff">
+    <div class="debugger">
+<h1>ConnectionRefusedError</h1>
+<div class="detail">
+  <p class="errormsg">ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+</p>
+</div>
+<h2 class="traceback">Traceback <em>(most recent call last)</em></h2>
+<div class="traceback">
+  <h3></h3>
+  <ul><li><div class="frame" id="frame-1827251263312">
+  <h4>File <cite class="filename">"C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py"</cite>,
+      line <em class="line">1536</em>,
+      in <code class="function">__call__</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">    </span>) -&gt; cabc.Iterable[bytes]:</pre>
+<pre class="line before"><span class="ws">        </span>&#34;&#34;&#34;The WSGI server calls the Flask application object as the</pre>
+<pre class="line before"><span class="ws">        </span>WSGI application. This calls :meth:`wsgi_app`, which can be</pre>
+<pre class="line before"><span class="ws">        </span>wrapped to apply middleware.</pre>
+<pre class="line before"><span class="ws">        </span>&#34;&#34;&#34;</pre>
+<pre class="line current"><span class="ws">        </span>return self.wsgi_app(environ, start_response)
+<span class="ws">        </span>       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre></div>
+</div>
+
+<li><div class="frame" id="frame-1827251264176">
+  <h4>File <cite class="filename">"C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py"</cite>,
+      line <em class="line">1514</em>,
+      in <code class="function">wsgi_app</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span>try:</pre>
+<pre class="line before"><span class="ws">                </span>ctx.push()</pre>
+<pre class="line before"><span class="ws">                </span>response = self.full_dispatch_request()</pre>
+<pre class="line before"><span class="ws">            </span>except Exception as e:</pre>
+<pre class="line before"><span class="ws">                </span>error = e</pre>
+<pre class="line current"><span class="ws">                </span>response = self.handle_exception(e)
+<span class="ws">                </span>           ^^^^^^^^^^^^^^^^^^^^^^^^</pre>
+<pre class="line after"><span class="ws">            </span>except:  # noqa: B001</pre>
+<pre class="line after"><span class="ws">                </span>error = sys.exc_info()[1]</pre>
+<pre class="line after"><span class="ws">                </span>raise</pre>
+<pre class="line after"><span class="ws">            </span>return response(environ, start_response)</pre>
+<pre class="line after"><span class="ws">        </span>finally:</pre></div>
+</div>
+
+<li><div class="frame" id="frame-1827251264320">
+  <h4>File <cite class="filename">"C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py"</cite>,
+      line <em class="line">1511</em>,
+      in <code class="function">wsgi_app</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">        </span>ctx = self.request_context(environ)</pre>
+<pre class="line before"><span class="ws">        </span>error: BaseException | None = None</pre>
+<pre class="line before"><span class="ws">        </span>try:</pre>
+<pre class="line before"><span class="ws">            </span>try:</pre>
+<pre class="line before"><span class="ws">                </span>ctx.push()</pre>
+<pre class="line current"><span class="ws">                </span>response = self.full_dispatch_request()
+<span class="ws">                </span>           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre>
+<pre class="line after"><span class="ws">            </span>except Exception as e:</pre>
+<pre class="line after"><span class="ws">                </span>error = e</pre>
+<pre class="line after"><span class="ws">                </span>response = self.handle_exception(e)</pre>
+<pre class="line after"><span class="ws">            </span>except:  # noqa: B001</pre>
+<pre class="line after"><span class="ws">                </span>error = sys.exc_info()[1]</pre></div>
+</div>
+
+<li><div class="frame" id="frame-1827251264464">
+  <h4>File <cite class="filename">"C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py"</cite>,
+      line <em class="line">919</em>,
+      in <code class="function">full_dispatch_request</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span>request_started.send(self, _async_wrapper=self.ensure_sync)</pre>
+<pre class="line before"><span class="ws">            </span>rv = self.preprocess_request()</pre>
+<pre class="line before"><span class="ws">            </span>if rv is None:</pre>
+<pre class="line before"><span class="ws">                </span>rv = self.dispatch_request()</pre>
+<pre class="line before"><span class="ws">        </span>except Exception as e:</pre>
+<pre class="line current"><span class="ws">            </span>rv = self.handle_user_exception(e)
+<span class="ws">            </span>     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre>
+<pre class="line after"><span class="ws">        </span>return self.finalize_request(rv)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def finalize_request(</pre>
+<pre class="line after"><span class="ws">        </span>self,</pre>
+<pre class="line after"><span class="ws">        </span>rv: ft.ResponseReturnValue | HTTPException,</pre></div>
+</div>
+
+<li><div class="frame" id="frame-1827251264608">
+  <h4>File <cite class="filename">"C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py"</cite>,
+      line <em class="line">917</em>,
+      in <code class="function">full_dispatch_request</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">        </span>try:</pre>
+<pre class="line before"><span class="ws">            </span>request_started.send(self, _async_wrapper=self.ensure_sync)</pre>
+<pre class="line before"><span class="ws">            </span>rv = self.preprocess_request()</pre>
+<pre class="line before"><span class="ws">            </span>if rv is None:</pre>
+<pre class="line current"><span class="ws">                </span>rv = self.dispatch_request()
+<span class="ws">                </span>     ^^^^^^^^^^^^^^^^^^^^^^^</pre>
+<pre class="line after"><span class="ws">        </span>except Exception as e:</pre>
+<pre class="line after"><span class="ws">            </span>rv = self.handle_user_exception(e)</pre>
+<pre class="line after"><span class="ws">        </span>return self.finalize_request(rv)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def finalize_request(</pre></div>
+</div>
+
+<li><div class="frame" id="frame-1827251264752">
+  <h4>File <cite class="filename">"C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py"</cite>,
+      line <em class="line">902</em>,
+      in <code class="function">dispatch_request</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span>and req.method == &#34;OPTIONS&#34;</pre>
+<pre class="line before"><span class="ws">        </span>):</pre>
+<pre class="line before"><span class="ws">            </span>return self.make_default_options_response()</pre>
+<pre class="line before"><span class="ws">        </span># otherwise dispatch to the handler for that endpoint</pre>
+<pre class="line before"><span class="ws">        </span>view_args: dict[str, t.Any] = req.view_args  # type: ignore[assignment]</pre>
+<pre class="line current"><span class="ws">        </span>return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+<span class="ws">        </span>       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def full_dispatch_request(self) -&gt; Response:</pre>
+<pre class="line after"><span class="ws">        </span>&#34;&#34;&#34;Dispatches the request and on top of that performs request</pre>
+<pre class="line after"><span class="ws">        </span>pre and postprocessing as well as HTTP exception catching and</pre>
+<pre class="line after"><span class="ws">        </span>error handling.</pre></div>
+</div>
+
+<li><div class="frame" id="frame-1827251264896">
+  <h4>File <cite class="filename">"d:\ISSA\LAB2-3\ISSA-MaaS\Server\Controllers\car_controller.py"</cite>,
+      line <em class="line">91</em>,
+      in <code class="function">start_rent_car</code></h4>
+  <div class="source "><pre class="line before"><span class="ws">        </span>return {&#39;message&#39;: &#39;Car is already unlocked&#39;}, 400</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">    </span>cursor.execute(&#39;UPDATE cars SET locked = 0 WHERE id = ?&#39;, (id,))</pre>
+<pre class="line before"><span class="ws">    </span>connection.commit()</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line current"><span class="ws">    </span>notify_car(id, car[8], &#39;rented&#39;)
+<span class="ws">    </span>^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>return {}, 202</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws"></span>@car_bp.route(&#39;/cars/rental/&lt;int:id&gt;&#39;, methods=[&#39;DELETE&#39;])</pre>
+<pre class="line after"><span class="ws"></span>def finish_rent_car(id):</pre></div>
+</div>
+
+<li><div class="frame" id="frame-1827251265040">
+  <h4>File <cite class="filename">"d:\ISSA\LAB2-3\ISSA-MaaS\Server\Controllers\car_controller.py"</cite>,
+      line <em class="line">128</em>,
+      in <code class="function">notify_car</code></h4>
+  <div class="source "><pre class="line before"><span class="ws">    </span>cli_app_host = &#39;localhost&#39;</pre>
+<pre class="line before"><span class="ws">    </span>cli_app_port = car_port</pre>
+<pre class="line before"><span class="ws">    </span>message = f&#39;Car {car_id} is {status}&#39;</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">    </span>with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:</pre>
+<pre class="line current"><span class="ws">        </span>s.connect((cli_app_host, cli_app_port))
+<span class="ws">        </span>^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre>
+<pre class="line after"><span class="ws">        </span>s.sendall(message.encode())</pre></div>
+</div>
+</ul>
+  <blockquote>ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+</blockquote>
+</div>
+
+<div class="plain">
+    <p>
+      This is the Copy/Paste friendly version of the traceback.
+    </p>
+    <textarea cols="50" rows="10" name="code" readonly>Traceback (most recent call last):
+  File &#34;C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py&#34;, line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &#34;C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py&#34;, line 1514, in wsgi_app
+    response = self.handle_exception(e)
+  File &#34;C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py&#34;, line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File &#34;C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py&#34;, line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File &#34;C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py&#34;, line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File &#34;C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py&#34;, line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File &#34;d:\ISSA\LAB2-3\ISSA-MaaS\Server\Controllers\car_controller.py&#34;, line 91, in start_rent_car
+    notify_car(id, car[8], &#39;rented&#39;)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File &#34;d:\ISSA\LAB2-3\ISSA-MaaS\Server\Controllers\car_controller.py&#34;, line 128, in notify_car
+    s.connect((cli_app_host, cli_app_port))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+</textarea>
+</div>
+<div class="explanation">
+  The debugger caught an exception in your WSGI application.  You can now
+  look at the traceback which led to the error.  <span class="nojavascript">
+  If you enable JavaScript you can also use additional features such as code
+  execution (if the evalex feature is enabled), automatic pasting of the
+  exceptions and much more.</span>
+</div>
+      <div class="footer">
+        Brought to you by <strong class="arthur">DON'T PANIC</strong>, your
+        friendly Werkzeug powered traceback interpreter.
+      </div>
+    </div>
+
+    <div class="pin-prompt">
+      <div class="inner">
+        <h3>Console Locked</h3>
+        <p>
+          The console is locked and needs to be unlocked by entering the PIN.
+          You can find the PIN printed out on the standard output of your
+          shell that runs the server.
+        <form>
+          <p>PIN:
+            <input type=text name=pin size=14>
+            <input type=submit name=btn value="Confirm Pin">
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!--
+
+Traceback (most recent call last):
+  File "C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1514, in wsgi_app
+    response = self.handle_exception(e)
+  File "C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Vatman\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "d:\ISSA\LAB2-3\ISSA-MaaS\Server\Controllers\car_controller.py", line 91, in start_rent_car
+    notify_car(id, car[8], 'rented')
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\ISSA\LAB2-3\ISSA-MaaS\Server\Controllers\car_controller.py", line 128, in notify_car
+    s.connect((cli_app_host, cli_app_port))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+
+-->
+
+2025-03-10 15:58:41,633 - maas_client - INFO - Socket server shutdown
+2025-03-10 15:58:41,633 - maas_client - INFO - Received notification: 
+2025-03-10 15:58:41,634 - maas_client - INFO - Socket server stopped
+2025-03-10 16:03:38,055 - maas_client - INFO - Session cleared
+2025-03-10 16:03:38,055 - maas_client - INFO - User logged out successfully
+2025-03-10 16:03:46,973 - maas_client - INFO - New session created
+2025-03-10 16:03:46,973 - maas_client - INFO - User ceva@gmail.com logged in successfully
+2025-03-10 16:07:59,806 - maas_client - INFO - Session cleared
+2025-03-10 16:07:59,807 - maas_client - INFO - User logged out successfully
+2025-03-10 16:10:57,576 - maas_client - INFO - New session created
+2025-03-10 16:10:57,576 - maas_client - INFO - User ceva@gmail.com logged in successfully
+2025-03-10 16:11:10,863 - maas_client - ERROR - Failed to get car 1: 'ApiClient' object has no attribute '_make_request'
+2025-03-10 16:11:36,968 - maas_client - INFO - Session cleared
+2025-03-10 16:11:36,968 - maas_client - INFO - User logged out successfully
+2025-03-10 16:12:39,157 - maas_client - INFO - New session created
+2025-03-10 16:12:39,157 - maas_client - INFO - User ceva@gmail.com logged in successfully
+2025-03-10 16:12:55,382 - maas_client - INFO - Socket server started on port 22980
+2025-03-10 16:12:55,383 - maas_client - INFO - Socket server started on port 22980
+2025-03-10 16:13:06,897 - maas_client - INFO - Received notification: Car 1 is rented
+2025-03-10 16:13:14,534 - maas_client - INFO - Received notification: Car 1 is finished renting
+2025-03-10 16:13:14,537 - maas_client - INFO - Received notification: 
+2025-03-10 16:13:14,537 - maas_client - INFO - Socket server shutdown
+2025-03-10 16:14:45,183 - maas_client - INFO - Socket server started on port 36163
+2025-03-10 16:14:45,184 - maas_client - INFO - Socket server started on port 36163
+2025-03-10 16:15:01,497 - maas_client - INFO - Received notification: Car 2 is rented
+2025-03-10 16:15:12,342 - maas_client - ERROR - API error: Cannot start rent: {
+  "message": "Car is already unlocked"
+}
+
+2025-03-10 16:15:21,761 - maas_client - INFO - Received notification: Car 2 is finished renting
+2025-03-10 16:15:21,763 - maas_client - INFO - Received notification: 
+2025-03-10 16:15:21,763 - maas_client - INFO - Socket server shutdown

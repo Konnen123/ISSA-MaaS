@@ -20,4 +20,4 @@ if __name__ == '__main__':
     '''
     add a car first, then with the port given from the backend establish a connection with the CLI app
     '''
-    start_server(port=39689) # port number from the car (hardcoded for now)
+    start_server(port=22980) # port number from the car (hardcoded for now)
